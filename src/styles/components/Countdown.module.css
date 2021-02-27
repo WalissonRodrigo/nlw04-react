@@ -21,7 +21,7 @@
   min-width: 11rem;
 }
 
-@media(max-width: 998px) {
+@media (max-width: 998px) {
   .countdownContainer > div {
     font-size: 8.5rem;
     min-width: 11rem;
@@ -30,7 +30,7 @@
     font-size: 6.25rem;
   }
 }
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .countdownContainer > div {
     font-size: 6.5rem;
     min-width: 2rem;
@@ -40,7 +40,7 @@
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .countdownContainer > div {
     font-size: 5.5rem;
     min-width: 1.5rem;
@@ -50,7 +50,7 @@
   }
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .countdownContainer > div {
     font-size: 4.5rem;
     min-width: 1rem;
@@ -60,7 +60,7 @@
   }
 }
 
-@media(max-width: 380px) {
+@media (max-width: 380px) {
   .countdownContainer > div {
     font-size: 3.5rem;
     min-width: 0rem;

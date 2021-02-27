@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { ChallengesContext } from "./ChallengesContext";
 
-const INIT_TIME_MINUTES = 25;
+const INIT_TIME_MINUTES = 0.05;
 const HOUR_IN_MINUTES = 60;
 
 let countdownTimeout: NodeJS.Timeout;
