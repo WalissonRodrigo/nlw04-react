@@ -21,6 +21,11 @@
   min-width: 11rem;
 }
 
+.countdownContainer > span {
+  font-size: 6.25rem;
+  margin: 0 0.5rem;
+}
+
 @media (max-width: 998px) {
   .countdownContainer > div {
     font-size: 8.5rem;
@@ -28,6 +33,7 @@
   }
   .countdownContainer > span {
     font-size: 6.25rem;
+    margin: 0 0.5rem;
   }
 }
 @media (max-width: 720px) {
@@ -37,6 +43,7 @@
   }
   .countdownContainer > span {
     font-size: 5.25rem;
+    margin: 0 0.4rem;
   }
 }
 
@@ -47,6 +54,7 @@
   }
   .countdownContainer > span {
     font-size: 4.75rem;
+    margin: 0 0.3rem;
   }
 }
 
@@ -57,6 +65,7 @@
   }
   .countdownContainer > span {
     font-size: 3.25rem;
+    margin: 0 0.2rem;
   }
 }
 
@@ -67,6 +76,7 @@
   }
   .countdownContainer > span {
     font-size: 2.25rem;
+    margin: 0 0.15rem;
   }
 }
 
@@ -80,11 +90,6 @@
 
 .countdownContainer > div span:last-child {
   border-left: 1px solid #f0f1f3;
-}
-
-.countdownContainer > span {
-  font-size: 6.25rem;
-  margin: 0 0.5rem;
 }
 
 .countdownButton {
