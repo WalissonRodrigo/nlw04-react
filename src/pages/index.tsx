@@ -1,60 +1,41 @@
-import Head from "next/head";
-import { GetServerSideProps } from "next";
-import styles from "../styles/pages/Home.module.css";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import ExperienceBar from "../components/ExperienceBar";
-import Profile from "../components/Profile";
-import CompletedChallenges from "../components/CompletedChallenges";
-import Countdown from "../components/Countdown";
-import ChallengeBox from "../components/ChallengeBox";
+import styles from "../styles/pages/Login.module.css";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import Cookies from "js-cookie";
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
-
-export default function Home({
-  level,
-  currentExperience,
-  challengesCompleted,
-}: HomeProps) {
+function Login() {
+  const [userName, setUserName] = useState("");
+  const router = useRouter();
+  function handleLogin() {
+    Cookies.set("userName", userName);
+    router.push("/home");
+  }
   return (
-    <ChallengesProvider
-      level={level}
-      currentExperience={currentExperience}
-      challengesCompleted={challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Inicio | move.it</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+    <div className={styles.container}>
+      <div className={styles.formLogin}>
+        <img src="/logo-full.svg" alt="Logo do MoveIt" />
+        <strong>Bem-vindo</strong>
+        <div>
+          <img src="/icons/github.svg" alt="icone do github" />
+          <p>Faça login com seu Github para começar</p>
+        </div>
+        <form>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <button type="button" onClick={handleLogin}>
+            <img
+              src="/icons/arrow-submit.svg"
+              alt="icone do botão de submissão do formulário de login"
+            />
+          </button>
+        </form>
       </div>
-    </ChallengesProvider>
+    </div>
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    },
-  };
-};
+export default Login;

@@ -8,6 +8,8 @@ export const ChallengesContext = createContext({} as ChallengesContextData);
 
 interface ChallengesProviderProps {
   children: ReactNode;
+  userName: string;
+  urlProfile: string;
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -20,6 +22,8 @@ interface Challenge {
 }
 
 interface ChallengesContextData {
+  userName: string;
+  urlProfile: string,
   level: number;
   currentExperience: number;
   challengesCompleted: number;
@@ -98,6 +102,8 @@ export function ChallengesProvider({
   return (
     <ChallengesContext.Provider
       value={{
+        userName: rest.userName ?? null,
+        urlProfile: rest.urlProfile,
         level,
         currentExperience,
         challengesCompleted,

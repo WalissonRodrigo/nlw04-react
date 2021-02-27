@@ -1,0 +1,94 @@
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: url("/logo-login.svg") no-repeat var(--blue);
+  background-size: 90vh;
+  background-position-y: center;
+  width: calc(100vw + 100px);
+  height: 100vh;
+  margin-left: -100px;
+}
+
+.formLogin {
+  width: 38rem;
+  /* height: 40rem; */
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formLogin > img {
+  margin-bottom: 4rem;
+  width: 25vw;
+}
+.formLogin strong {
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.formLogin > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.formLogin > div img {
+  color: var(--white);
+  margin-right: 1rem;
+}
+
+.formLogin > div p {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 200;
+}
+
+.formLogin > form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.formLogin > form input {
+  height: 5rem;
+  background: var(--blue);
+  filter: brightness(0.75);
+  font-size: 1.5rem;
+  color: var(--white);
+  padding: 1rem;
+  border: 0 transparent;
+}
+.formLogin > form input:focus {
+  filter: brightness(0.85);
+  border: 0 transparent;
+  outline: none;
+}
+
+.formLogin > form button {
+  height: 5rem;
+  width: 5rem;
+  background: var(--blue);
+  filter: brightness(0.65);
+  font-size: 0px;
+  color: var(--white);
+  padding: 1rem;
+  border: 0 transparent;
+
+}
+
+.formLogin > form button:hover {
+  filter: brightness(0.95);
+  background: var(--green);
+  border: 0 transparent;
+  outline: none;
+}
+.formLogin > form input:focus button {
+  filter: brightness(0.75);
+  border: 0 transparent;
+  outline: none;
+}
