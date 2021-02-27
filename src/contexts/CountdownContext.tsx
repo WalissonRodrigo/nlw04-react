@@ -7,6 +7,11 @@ import React, {
 } from "react";
 import { ChallengesContext } from "./ChallengesContext";
 
+const INIT_TIME_MINUTES = 25;
+const HOUR_IN_MINUTES = 60;
+
+let countdownTimeout: NodeJS.Timeout;
+
 interface CountdownProviderProps {
   children: ReactNode;
 }
@@ -20,10 +25,6 @@ interface CountdownContextData {
   startCountdown: () => void;
   resetCountdown: () => void;
 }
-
-let countdownTimeout: NodeJS.Timeout;
-const INIT_TIME_MINUTES = 0.05;
-const HOUR_IN_MINUTES = 60;
 
 export const CountdownContext = createContext({} as CountdownContextData);
 
