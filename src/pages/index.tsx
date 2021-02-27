@@ -1,6 +1,7 @@
-import styles from "../styles/pages/Login.module.css";
-import { useRouter } from "next/router";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import Head from "next/head";
+import styles from "../styles/pages/Login.module.css";
 import Cookies from "js-cookie";
 
 function Login() {
@@ -12,6 +13,9 @@ function Login() {
   }
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Login | move.it</title>
+      </Head>
       <div className={styles.formLogin}>
         <img src="/logo-full.svg" alt="Logo do MoveIt" />
         <strong>Bem-vindo</strong>
