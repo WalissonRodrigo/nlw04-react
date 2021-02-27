@@ -1,6 +1,7 @@
 import React, { createContext, ReactNode, useEffect, useState } from "react";
 import challenges from "../../challenges.json";
 
+const random = () => Math.random();
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
 interface ChallengesProviderProps {
@@ -42,7 +43,7 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
   }
 
   function startNewChallenge() {
-    const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
+    const randomChallengeIndex = Math.floor(random() * challenges.length);
     const challenge = challenges[randomChallengeIndex];
     setActiveChallenge(challenge);
     new Audio("/notification.mp3").play();
