@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import styles from "../styles/components/ExperienceBar.module.css";
 
+const DIFERENCE_CSS_MARGIN = 3;
+
 function ExperienceBar() {
   const { currentExperience, experienceToNextLevel } = useContext(
     ChallengesContext
@@ -15,7 +17,7 @@ function ExperienceBar() {
         <div style={{ width: `${percentToNextLevel}%` }} />
         <span
           className={styles.currentExperience}
-          style={{ left: `${percentToNextLevel}%` }}
+          style={{ left: `${percentToNextLevel + DIFERENCE_CSS_MARGIN}%` }}
         >
           {currentExperience} xp
         </span>
